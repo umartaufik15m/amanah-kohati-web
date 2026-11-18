@@ -48,11 +48,10 @@ export default function Page() {
             <div className="hero__copy">
               <Reveal>
                 <SafeImg src="/images/logo-header.png" alt="Logo HMI dan KOHATI" className="hero__logo" />
-                <p className="kicker kicker--pill">{hero.sapaan}</p>
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="hero__title">
-                  {hero.judul}
+                  {hero.judul.replace(/,\s*$/, "")}
                   <span>
                     untuk <em>Perempuan</em> Indonesia
                   </span>
@@ -76,7 +75,7 @@ export default function Page() {
             </div>
             <Reveal delay={150} className="hero__visual hero__visual--img">
               <FallbackImg
-                srcs={["/images/Visual.png", "/images/Visual.jpg"]}
+                srcs={["/images/Visual.png", "/images/Visual-hero.jpg"]}
                 alt="Dini Asmiatul Amanah"
                 className="hero__visual-img"
               />
