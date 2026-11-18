@@ -18,14 +18,13 @@ export const profil = {
   fokus: ["Kepemimpinan", "Komunikasi", "Pemberdayaan Perempuan"],
   kontak: {
     telepon: "+62 822-1656-5693",
-    whatsapp: "https://wa.me/6282216565693?text=" + encodeURIComponent("Assalamu'alaikum, saya mendukung Dini Asmiatul Amanah untuk Amanah KOHATI."),
+    whatsapp: "https://wa.me/6282216565693?text=" + encodeURIComponent("Halo, saya mendukung Dini Asmiatul Amanah untuk Amanah KOHATI."),
     email: "Diniasmiatul13@gmail.com",
     instagram: "amanahkohati",
   },
 };
 
 export const hero = {
-  sapaan: "Assalamu’alaikum, selamat datang",
   judul: "Amanah KOHATI,",
   sub: "untuk Perempuan Indonesia",
   tagline: "Tanggung Jawab Besar, Meniti Jalan Muslimah Insan Cita",
