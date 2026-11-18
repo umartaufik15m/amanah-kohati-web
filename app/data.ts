@@ -75,7 +75,7 @@ export const berita: Berita[] = [
       "Ia pun memohon doa dan dukungan dari seluruh HMI-Wati, khususnya kader dari Jawa Barat, agar KOHATI semakin hadir dan memberi manfaat bagi perempuan Indonesia.",
     ],
     kutipan: "Kepemimpinan bukan soal jabatan, kepemimpinan adalah kesediaan untuk melayani.",
-    banner: "berita-pendaftaran.jpg",
+    banner: "berita-pengambilanformulir.jpg",
     sumberLiputan: {
       nama: "Berita Opini",
       url: "https://beritaopini.id/2026/11/17/putri-daerah-jawa-barat-dini-asmiatul-amanah-maju-sebagai-calon-ketua-umum-kohati-pb-hmi-periode-2027-2029/",

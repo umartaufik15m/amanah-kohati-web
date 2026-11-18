@@ -13,9 +13,10 @@ export const metadata: Metadata = {
     siteName: site.nama,
     locale: "id_ID",
     type: "website",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 650, alt: "Amanah KOHATI, untuk Perempuan Indonesia" }],
+    videos: [{ url: `${site.url}/images/og-image.mp4`, width: 900, height: 488, type: "video/mp4" }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/images/og-image.jpg"] },
 };
 
 export const viewport: Viewport = {
