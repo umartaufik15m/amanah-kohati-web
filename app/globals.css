@@ -328,3 +328,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .profile--solo .profile__body { grid-template-columns: 1fr 1fr; gap: 20px 24px; align-items: start; }
 .profile--solo .profile__body > .stitle, .profile--solo .profile__body > .narasi, .profile--solo .profile__body > :nth-child(3) { grid-column: 1 / -1; }
 @media (max-width: 860px) { .profile--solo .profile__body { grid-template-columns: 1fr; } }
+
+/* banner liputan media (tanpa gambar) */
+.news__media { height: 100%; display: grid; align-content: center; gap: 6px; padding: 24px; color: var(--white); background: linear-gradient(135deg, var(--hijau), var(--green-deep)); }
+.news__media b { font-family: var(--serif); font-style: italic; font-size: 40px; line-height: 1; }
+.news__media span:last-child { font-weight: 600; opacity: .85; }
+.news__media-chip { justify-self: start; background: var(--white); color: var(--green-deep); }
+.news { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }

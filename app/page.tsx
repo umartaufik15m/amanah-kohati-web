@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import Decor from "@/components/Decor";
 import Footer from "@/components/Footer";
-import Photo from "@/components/Photo";
+import NewsCard from "@/components/NewsCard";
 import SafeImg from "@/components/SafeImg";
 import {
   hero, berita, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
@@ -86,20 +86,9 @@ export default function Page() {
               <Link href="/berita" className="link link--green">Lihat semua rilis →</Link>
             </div>
             <div className="news">
-              {berita.map((b, i) => (
+              {berita.slice(0, 3).map((b, i) => (
                 <Reveal key={b.slug} delay={i * 90} as="article" className="news__card">
-                  <Link href={`/berita/${b.slug}`} className="news__banner" aria-label={b.judul}>
-                    <Photo src={`/images/berita-${b.slug}.jpg`} alt={`Banner ${b.kategori}`} label={`Banner ${b.kategori}`} />
-                  </Link>
-                  <div className="news__body">
-                    <div className="news__meta">
-                      <span className="chip chip--green">{b.kategori}</span>
-                      <span>{b.tanggal}</span>
-                    </div>
-                    <h3>{b.judul}</h3>
-                    <p>{b.ringkasan}</p>
-                    <Link href={`/berita/${b.slug}`} className="btn btn--outline-green btn--small">Baca Selengkapnya →</Link>
-                  </div>
+                  <NewsCard b={b} />
                 </Reveal>
               ))}
             </div>

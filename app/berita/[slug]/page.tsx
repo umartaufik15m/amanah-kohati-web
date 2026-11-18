@@ -5,12 +5,12 @@ import Nav from "@/components/Nav";
 import Photo from "@/components/Photo";
 import Footer from "@/components/Footer";
 import ShareButtons from "@/components/ShareButtons";
-import { berita } from "@/app/data";
+import { berita, beritaInternal } from "@/app/data";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return berita.map((b) => ({ slug: b.slug }));
+  return beritaInternal().map((b) => ({ slug: b.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BeritaPage({ params }: Props) {
   const { slug } = await params;
-  const b = berita.find((x) => x.slug === slug);
+  const b = beritaInternal().find((x) => x.slug === slug);
   if (!b) notFound();
   const lain = berita.filter((x) => x.slug !== b.slug);
 
@@ -57,7 +57,7 @@ export default async function BeritaPage({ params }: Props) {
               <ul>
                 {lain.map((x) => (
                   <li key={x.slug}>
-                    <Link href={`/berita/${x.slug}`}>
+                    <Link href={x.url ?? `/berita/${x.slug}`} {...(x.url ? { target: "_blank", rel: "noreferrer" } : {})}>
                       <span className="chip chip--green">{x.kategori}</span>
                       <b>{x.judul}</b>
                     </Link>

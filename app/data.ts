@@ -1,5 +1,7 @@
 // Seluruh isi website ada di file ini. Ubah teks di sini tanpa menyentuh tampilan.
 
+export const beritaInternal = () => berita.filter((b) => !b.url);
+
 export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://amanahkohati.id",
   nama: "Amanah KOHATI",
@@ -41,11 +43,28 @@ export type Berita = {
   tanggal: string; // isi dengan tanggal rilis, contoh "12 Desember 2026"
   isi: string[];
   kutipan?: string;
+  // Untuk liputan media dari situs lain: isi `url` dan `sumber`.
+  // Kartu akan langsung membuka artikel aslinya (tanpa halaman detail).
+  url?: string;
+  sumber?: string;
 };
 
 // Ganti isi berita di sini. Tambah objek baru untuk rilis berikutnya,
 // lalu taruh banner-nya di public/images/berita-<slug>.jpg
 export const berita: Berita[] = [
+  {
+    slug: "liputan-beritaopini-maju-calon-ketum",
+    kategori: "Liputan Media",
+    bannerJudul: "Liputan Media",
+    bannerSub: "17 November 2026",
+    judul: "Putri Daerah Jawa Barat, Dini Asmiatul Amanah Maju Sebagai Calon Ketua Umum Kohati PB HMI Periode 2027-2029",
+    ringkasan:
+      "Berita Opini meliput pengambilan formulir pendaftaran Dini Asmiatul Amanah di Sekretariat PB HMI menjelang Munas KOHATI ke-XXVI di Bandar Lampung.",
+    tanggal: "17 November 2026",
+    isi: [],
+    url: "https://beritaopini.id/2026/11/17/putri-daerah-jawa-barat-dini-asmiatul-amanah-maju-sebagai-calon-ketua-umum-kohati-pb-hmi-periode-2027-2029/",
+    sumber: "Berita Opini",
+  },
   {
     slug: "pendaftaran",
     kategori: "Pendaftaran",
