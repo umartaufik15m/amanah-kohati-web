@@ -6,9 +6,7 @@ const links = [
   { href: "/#berita", label: "Berita" },
   { href: "/#profil", label: "Profil" },
   { href: "/#rekam-jejak", label: "Rekam Jejak" },
-  { href: "/#gagasan", label: "Gagasan" },
-  { href: "/#program", label: "Program" },
-  { href: "/#galeri", label: "Galeri" },
+  { href: "/#kaderisasi", label: "Kaderisasi" },
 ];
 
 export default function Nav() {
@@ -37,8 +35,8 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="/#dukung" className="btn btn--small" onClick={() => setOpen(false)}>
-            Dukung Amanah
+          <a href={`https://instagram.com/amanahkohati`} target="_blank" rel="noreferrer" className="btn btn--small" onClick={() => setOpen(false)}>
+            @amanahkohati
           </a>
         </nav>
         <button

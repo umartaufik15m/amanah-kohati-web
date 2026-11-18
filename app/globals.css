@@ -321,3 +321,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .masonry { columns: 2 140px; }
   .footer__inner { flex-direction: column; gap: 8px; text-align: center; }
 }
+
+/* versi ringkas (tanpa foto) */
+.hero__grid.hero__grid--solo { grid-template-columns: 1fr; min-height: 460px; }
+.profile.profile--solo { grid-template-columns: 1fr; }
+.profile--solo .profile__body { grid-template-columns: 1fr 1fr; gap: 20px 24px; align-items: start; }
+.profile--solo .profile__body > .stitle, .profile--solo .profile__body > .narasi, .profile--solo .profile__body > :nth-child(3) { grid-column: 1 / -1; }
+@media (max-width: 860px) { .profile--solo .profile__body { grid-template-columns: 1fr; } }
