@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import FallbackImg from "@/components/FallbackImg";
 
 const links = [
   { href: "/#berita", label: "Berita" },
@@ -24,10 +25,16 @@ export default function Nav() {
     <header className={`nav ${scrolled ? "nav--solid" : ""} ${open ? "nav--open" : ""}`}>
       <div className="nav__inner container">
         <a href="/#top" className="nav__brand" onClick={() => setOpen(false)}>
-          <span className="nav__mark" aria-hidden>✦</span>
-          <span>
-            Amanah <b>KOHATI</b>
-          </span>
+          <FallbackImg
+            srcs={["/images/Logo Amanah White.png", "/images/logo-amanah-white.png", "/images/Logo Amanah White.svg"]}
+            alt="Amanah KOHATI"
+            className="nav__logo"
+            fallback={
+              <span>
+                <span className="nav__mark" aria-hidden>✦ </span>Amanah <b>KOHATI</b>
+              </span>
+            }
+          />
         </a>
         <nav className="nav__links" aria-label="Navigasi utama">
           {links.map((l) => (

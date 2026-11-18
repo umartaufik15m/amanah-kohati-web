@@ -343,3 +343,27 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .news--single .news__body { padding: 36px; justify-content: center; }
 .news--single .news__body h3 { font-size: 28px; }
 @media (max-width: 860px) { .news--single .news__card { grid-template-columns: 1fr; } .news--single .news__banner { min-height: 220px; } }
+
+/* navbar pink + logo putih */
+.nav, .nav--solid { background: var(--ungu); box-shadow: 0 2px 20px rgba(194,87,125,.25); backdrop-filter: none; }
+.nav__brand { color: var(--white); }
+.nav__brand b, .nav__mark { color: var(--soft-pink); }
+.nav__logo { height: 44px; width: auto; }
+.nav__links a:not(.btn) { color: var(--white); opacity: .9; }
+.nav__links a:not(.btn):hover { color: var(--soft-pink); opacity: 1; }
+.nav__links .btn { background: var(--white); border-color: var(--white); color: var(--ungu); }
+.nav__toggle span { background: var(--white); }
+@media (max-width: 860px) {
+  .nav__links { background: var(--ungu); }
+  .nav--open { background: var(--ungu); }
+  .nav__links a:not(.btn) { border-bottom-color: rgba(255,255,255,.2); }
+}
+/* hero visual */
+.hero__visual--img { display: flex; align-items: flex-end; justify-content: center; height: auto; min-height: 520px; }
+.hero__visual-img { width: 100%; max-width: 520px; height: auto; mix-blend-mode: multiply; }
+.hero__visual-img[src$=".png"] { mix-blend-mode: normal; }
+.hero { padding-bottom: 0; }
+.hero__grid { align-items: end; }
+.hero__copy { padding-bottom: 90px; }
+@media (max-width: 860px) { .hero__visual--img { min-height: 0; } .hero__copy { padding-bottom: 40px; } }
+.hero > .container { z-index: auto; }

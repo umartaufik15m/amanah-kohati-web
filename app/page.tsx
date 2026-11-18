@@ -5,6 +5,7 @@ import Decor from "@/components/Decor";
 import Footer from "@/components/Footer";
 import NewsCard from "@/components/NewsCard";
 import SafeImg from "@/components/SafeImg";
+import FallbackImg from "@/components/FallbackImg";
 import {
   hero, berita, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
   organisasiNarasi, kaderisasi,
@@ -43,7 +44,7 @@ export default function Page() {
         <section className="hero">
           <Decor kind="kelopak" size={380} left="-130px" bottom="-40px" />
           <Decor kind="kotak" size={210} right="-60px" top="110px" reverse />
-          <div className="container hero__grid hero__grid--solo">
+          <div className="container hero__grid">
             <div className="hero__copy">
               <Reveal>
                 <SafeImg src="/images/logo-header.png" alt="Logo HMI dan KOHATI" className="hero__logo" />
@@ -73,6 +74,13 @@ export default function Page() {
                 </div>
               </Reveal>
             </div>
+            <Reveal delay={150} className="hero__visual hero__visual--img">
+              <FallbackImg
+                srcs={["/images/Visual.png", "/images/Visual.jpg"]}
+                alt="Dini Asmiatul Amanah"
+                className="hero__visual-img"
+              />
+            </Reveal>
           </div>
         </section>
         <Marquee tone="green" text="SELAMAT DATANG  ·  AMANAH KOHATI  ·  UNTUK PEREMPUAN INDONESIA  ·  " />
