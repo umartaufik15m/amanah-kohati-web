@@ -75,7 +75,7 @@ export default function Page() {
             </div>
             <Reveal delay={150} className="hero__visual hero__visual--img">
               <FallbackImg
-                srcs={["/images/Visual.png", "/images/Visual-hero.jpg"]}
+                srcs={["/images/Visual-hero.png", "/images/Visual-hero.jpg"]}
                 alt="Dini Asmiatul Amanah"
                 className="hero__visual-img"
               />
