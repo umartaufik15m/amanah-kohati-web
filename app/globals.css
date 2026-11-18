@@ -335,3 +335,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .news__media span:last-child { font-weight: 600; opacity: .85; }
 .news__media-chip { justify-self: start; background: var(--white); color: var(--green-deep); }
 .news { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.article__source { font-size: 15px; color: var(--mute); padding-top: 16px; border-top: 1px solid var(--line); }
+.article__source a { color: var(--green-deep); font-weight: 700; }
+.news.news--single { grid-template-columns: 1fr; }
+.news--single .news__card { display: grid; grid-template-columns: 1.1fr 1fr; }
+.news--single .news__banner { aspect-ratio: auto; min-height: 340px; height: 100%; }
+.news--single .news__body { padding: 36px; justify-content: center; }
+.news--single .news__body h3 { font-size: 28px; }
+@media (max-width: 860px) { .news--single .news__card { grid-template-columns: 1fr; } .news--single .news__banner { min-height: 220px; } }

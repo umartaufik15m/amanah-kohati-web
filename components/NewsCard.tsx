@@ -18,7 +18,7 @@ export default function NewsCard({ b }: { b: Berita }) {
             <span>{b.bannerSub}</span>
           </div>
         ) : (
-          <Photo src={`/images/berita-${b.slug}.jpg`} alt={`Banner ${b.kategori}`} label={`Banner ${b.kategori}`} />
+          <Photo src={`/images/${b.banner ?? `berita-${b.slug}.jpg`}`} alt={`Banner ${b.kategori}`} label={`Banner ${b.kategori}`} />
         )}
       </Link>
       <div className="news__body">

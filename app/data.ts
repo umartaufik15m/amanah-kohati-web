@@ -47,70 +47,39 @@ export type Berita = {
   // Kartu akan langsung membuka artikel aslinya (tanpa halaman detail).
   url?: string;
   sumber?: string;
+  // Media yang juga memberitakan (ditampilkan sebagai tautan di halaman detail)
+  sumberLiputan?: { nama: string; url: string };
+  // Nama file banner di public/images (default: berita-<slug>.jpg)
+  banner?: string;
 };
 
 // Ganti isi berita di sini. Tambah objek baru untuk rilis berikutnya,
 // lalu taruh banner-nya di public/images/berita-<slug>.jpg
 export const berita: Berita[] = [
   {
-    slug: "liputan-beritaopini-maju-calon-ketum",
-    kategori: "Liputan Media",
-    bannerJudul: "Liputan Media",
-    bannerSub: "17 November 2026",
-    judul: "Putri Daerah Jawa Barat, Dini Asmiatul Amanah Maju Sebagai Calon Ketua Umum Kohati PB HMI Periode 2027-2029",
-    ringkasan:
-      "Berita Opini meliput pengambilan formulir pendaftaran Dini Asmiatul Amanah di Sekretariat PB HMI menjelang Munas KOHATI ke-XXVI di Bandar Lampung.",
-    tanggal: "17 November 2026",
-    isi: [],
-    url: "https://beritaopini.id/2026/11/17/putri-daerah-jawa-barat-dini-asmiatul-amanah-maju-sebagai-calon-ketua-umum-kohati-pb-hmi-periode-2027-2029/",
-    sumber: "Berita Opini",
-  },
-  {
-    slug: "pendaftaran",
+    slug: "dini-ambil-formulir-calon-ketum-kohati",
     kategori: "Pendaftaran",
     bannerJudul: "Pendaftaran",
     bannerSub: "Bakal Calon Ketua Umum KOHATI PB HMI",
-    judul: "Dini Asmiatul Amanah Resmi Mendaftar sebagai Bakal Calon Ketua Umum KOHATI PB HMI",
+    judul: "Putri Daerah Jawa Barat, Dini Asmiatul Amanah Resmi Ambil Formulir Calon Ketua Umum KOHATI PB HMI 2027–2029",
     ringkasan:
-      "Pengambilan dan penyerahan formulir pendaftaran menuju Musyawarah Nasional KOHATI ke-XXVI di Lampung.",
-    tanggal: "[Tanggal rilis]",
+      "Didampingi tim, Dini mengambil formulir pendaftaran di Sekretariat PB HMI, Jakarta Selatan, menjelang Munas KOHATI ke-XXVI di Bandar Lampung.",
+    tanggal: "17 November 2026",
     isi: [
-      "[Paragraf pembuka: siapa, apa, kapan, di mana.]",
-      "[Paragraf isi: kronologi kegiatan, pihak yang hadir, dan pernyataan.]",
-      "[Paragraf penutup dan informasi lanjutan.]",
+      "Jakarta — Dini Asmiatul Amanah resmi mengambil formulir pendaftaran Bakal Calon Ketua Umum KOHATI PB HMI periode 2027–2029 pada Selasa, 17 November 2026. Didampingi tim, putri asal Tasikmalaya, Jawa Barat, itu datang ke Sekretariat PB HMI di Jakarta Selatan menjelang Musyawarah Nasional (Munas) KOHATI ke-XXVI yang akan digelar di Bandar Lampung.",
+      "Menurut Dini, pengambilan formulir ini adalah penanda kesiapannya untuk ikut dalam kontestasi kepemimpinan KOHATI di tingkat nasional.",
+      "Lahir dan besar di Tasikmalaya, Dini menamatkan pendidikan sarjana dan magister Pendidikan Sosiologi di Universitas Pendidikan Indonesia (UPI). Kini ia tengah menempuh program doktor Ilmu Politik di Universitas Nasional.",
+      "Proses berorganisasinya dimulai dari HMI Cabang Bandung. Ia pernah dipercaya sebagai Ketua Umum HMI Komisariat FPIPS UPI dan Ketua Umum KOHATI HMI Cabang Bandung, sebelum melanjutkan pengabdian di PB HMI. Saat ini ia menjabat Ketua Bidang Pemberdayaan Umat (PU) PB HMI periode 2024–2026.",
+      "Dalam pencalonannya, Dini mengusung gagasan “Amanah KOHATI, untuk Perempuan Indonesia”. Visinya adalah membangun KOHATI yang kuat dalam kaderisasi, tangguh dalam kelembagaan, serta menjadi ruang gerakan kepemimpinan Muslimah yang berkualitas.",
+      "Bagi Dini, ukuran kepemimpinan bukanlah jabatan, melainkan kesediaan untuk melayani, menjaga kepercayaan, dan menerjemahkan gagasan menjadi kerja nyata.",
+      "Ia pun memohon doa dan dukungan dari seluruh HMI-Wati, khususnya kader dari Jawa Barat, agar KOHATI semakin hadir dan memberi manfaat bagi perempuan Indonesia.",
     ],
-    kutipan: "[Kutipan pernyataan Dini Asmiatul Amanah.]",
-  },
-  {
-    slug: "deklarasi",
-    kategori: "Deklarasi",
-    bannerJudul: "Deklarasi",
-    bannerSub: "Amanah KOHATI, untuk Perempuan Indonesia",
-    judul: "Deklarasi Amanah KOHATI: Tanggung Jawab Besar, Meniti Jalan Muslimah Insan Cita",
-    ringkasan:
-      "Gagasan Amanah Kaderisasi, Kepemimpinan, dan Kelembagaan disampaikan di hadapan kader dan para senior.",
-    tanggal: "[Tanggal rilis]",
-    isi: [
-      "[Paragraf pembuka: siapa, apa, kapan, di mana.]",
-      "[Paragraf isi: kronologi kegiatan, pihak yang hadir, dan pernyataan.]",
-      "[Paragraf penutup dan informasi lanjutan.]",
-    ],
-    kutipan: "[Kutipan pernyataan Dini Asmiatul Amanah.]",
-  },
-  {
-    slug: "roadshow",
-    kategori: "Roadshow",
-    bannerJudul: "Roadshow",
-    bannerSub: "Konsolidasi Wilayah Se-Indonesia",
-    judul: "Roadshow Konsolidasi Wilayah: Menyerap Aspirasi Kader dari Sumatera hingga Papua",
-    ringkasan:
-      "Silaturahmi dan diskusi bersama cabang-cabang KOHATI untuk mematangkan program Amanah KOHATI.",
-    tanggal: "[Tanggal rilis]",
-    isi: [
-      "[Paragraf pembuka: siapa, apa, kapan, di mana.]",
-      "[Paragraf isi: kronologi kegiatan, pihak yang hadir, dan pernyataan.]",
-      "[Paragraf penutup dan informasi lanjutan.]",
-    ],
+    kutipan: "Kepemimpinan bukan soal jabatan, kepemimpinan adalah kesediaan untuk melayani.",
+    banner: "berita-pendaftaran.jpg",
+    sumberLiputan: {
+      nama: "Berita Opini",
+      url: "https://beritaopini.id/2026/11/17/putri-daerah-jawa-barat-dini-asmiatul-amanah-maju-sebagai-calon-ketua-umum-kohati-pb-hmi-periode-2027-2029/",
+    },
   },
 ];
 

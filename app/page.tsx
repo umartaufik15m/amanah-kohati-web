@@ -85,7 +85,7 @@ export default function Page() {
               <Title kicker="Kabar Terbaru" italic="Rilis" rest="Berita" tone="green" />
               <Link href="/berita" className="link link--green">Lihat semua rilis →</Link>
             </div>
-            <div className="news">
+            <div className={`news ${berita.length === 1 ? "news--single" : ""}`}>
               {berita.slice(0, 3).map((b, i) => (
                 <Reveal key={b.slug} delay={i * 90} as="article" className="news__card">
                   <NewsCard b={b} />

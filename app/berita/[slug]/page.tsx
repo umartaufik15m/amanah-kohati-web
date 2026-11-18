@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${b.judul} — Amanah KOHATI`,
     description: b.ringkasan,
-    openGraph: { title: b.judul, description: b.ringkasan, images: [`/images/berita-${b.slug}.jpg`], type: "article" },
+    openGraph: { title: b.judul, description: b.ringkasan, images: [`/images/${b.banner ?? `berita-${b.slug}.jpg`}`], type: "article" },
   };
 }
 
@@ -42,13 +42,19 @@ export default async function BeritaPage({ params }: Props) {
           </div>
           <h1 className="article__title">{b.judul}</h1>
           <div className="article__banner">
-            <Photo src={`/images/berita-${b.slug}.jpg`} alt={`Banner ${b.kategori}`} label={`berita-${b.slug}.jpg`} />
+            <Photo src={`/images/${b.banner ?? `berita-${b.slug}.jpg`}`} alt={`Banner ${b.kategori}`} label={b.banner ?? `berita-${b.slug}.jpg`} />
           </div>
           <div className="article__body">
             {b.isi.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
             {b.kutipan && <blockquote>“{b.kutipan}”</blockquote>}
+            {b.sumberLiputan && (
+              <p className="article__source">
+                Berita ini juga diliput oleh{" "}
+                <a href={b.sumberLiputan.url} target="_blank" rel="noreferrer">{b.sumberLiputan.nama} ↗</a>
+              </p>
+            )}
           </div>
           <ShareButtons title={b.judul} />
           {lain.length > 0 && (
