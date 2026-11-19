@@ -3,14 +3,17 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import NewsCard from "@/components/NewsCard";
 import Footer from "@/components/Footer";
-import { berita } from "@/app/data";
+import { getSemuaBerita } from "@/lib/news";
 
 export const metadata: Metadata = {
   title: "Rilis Berita — Amanah KOHATI",
   description: "Kumpulan rilis dan kabar terbaru Amanah KOHATI.",
 };
 
-export default function SemuaBerita() {
+export const revalidate = 60;
+
+export default async function SemuaBerita() {
+  const berita = await getSemuaBerita();
   return (
     <>
       <Nav />

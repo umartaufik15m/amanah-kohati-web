@@ -4,10 +4,11 @@ import Reveal from "@/components/Reveal";
 import Decor from "@/components/Decor";
 import Footer from "@/components/Footer";
 import NewsCard from "@/components/NewsCard";
+import { getSemuaBerita } from "@/lib/news";
 import SafeImg from "@/components/SafeImg";
 import FallbackImg from "@/components/FallbackImg";
 import {
-  hero, berita, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
+  hero, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
   organisasiNarasi, kaderisasi,
 } from "./data";
 
@@ -35,7 +36,10 @@ function Title({ kicker, italic, rest, tone }: { kicker?: string; italic: string
   );
 }
 
-export default function Page() {
+export const revalidate = 60;
+
+export default async function Page() {
+  const berita = await getSemuaBerita();
   return (
     <>
       <Nav />

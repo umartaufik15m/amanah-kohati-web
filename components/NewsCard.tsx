@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Photo from "@/components/Photo";
 import type { Berita } from "@/app/data";
+import { bannerSrc } from "@/lib/news";
 
 /** Kartu berita. Liputan media (punya `url`) membuka artikel aslinya di tab baru. */
 export default function NewsCard({ b }: { b: Berita }) {
@@ -18,7 +19,7 @@ export default function NewsCard({ b }: { b: Berita }) {
             <span>{b.bannerSub}</span>
           </div>
         ) : (
-          <Photo src={`/images/${b.banner ?? `berita-${b.slug}.jpg`}`} alt={`Banner ${b.kategori}`} label={`Banner ${b.kategori}`} />
+          <Photo src={bannerSrc(b)} alt={`Banner ${b.kategori}`} label={`Banner ${b.kategori}`} />
         )}
       </Link>
       <div className="news__body">

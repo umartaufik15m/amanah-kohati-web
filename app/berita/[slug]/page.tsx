@@ -5,30 +5,34 @@ import Nav from "@/components/Nav";
 import Photo from "@/components/Photo";
 import Footer from "@/components/Footer";
 import ShareButtons from "@/components/ShareButtons";
-import { berita, beritaInternal } from "@/app/data";
+import { getSemuaBerita, bannerSrc } from "@/lib/news";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
-  return beritaInternal().map((b) => ({ slug: b.slug }));
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  return (await getSemuaBerita()).filter((b) => !b.url).map((b) => ({ slug: b.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const b = berita.find((x) => x.slug === slug);
+  const b = (await getSemuaBerita()).find((x) => x.slug === slug);
   if (!b) return {};
   return {
     title: `${b.judul} — Amanah KOHATI`,
     description: b.ringkasan,
-    openGraph: { title: b.judul, description: b.ringkasan, images: [`/images/${b.banner ?? `berita-${b.slug}.jpg`}`], type: "article" },
+    openGraph: { title: b.judul, description: b.ringkasan, images: [bannerSrc(b)], type: "article" },
   };
 }
 
 export default async function BeritaPage({ params }: Props) {
   const { slug } = await params;
-  const b = beritaInternal().find((x) => x.slug === slug);
+  const berita = await getSemuaBerita();
+  const b = berita.find((x) => x.slug === slug && !x.url);
   if (!b) notFound();
-  const lain = berita.filter((x) => x.slug !== b.slug);
+  const lain = berita.filter((x) => x.slug !== b.slug).slice(0, 4);
 
   return (
     <>
@@ -42,7 +46,7 @@ export default async function BeritaPage({ params }: Props) {
           </div>
           <h1 className="article__title">{b.judul}</h1>
           <div className="article__banner">
-            <Photo src={`/images/${b.banner ?? `berita-${b.slug}.jpg`}`} alt={`Banner ${b.kategori}`} label={b.banner ?? `berita-${b.slug}.jpg`} />
+            <Photo src={bannerSrc(b)} alt={`Banner ${b.kategori}`} label="Foto berita" />
           </div>
           <div className="article__body">
             {b.isi.map((p, i) => (

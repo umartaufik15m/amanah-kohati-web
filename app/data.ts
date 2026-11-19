@@ -50,6 +50,9 @@ export type Berita = {
   sumberLiputan?: { nama: string; url: string };
   // Nama file banner di public/images (default: berita-<slug>.jpg)
   banner?: string;
+  // Diisi otomatis untuk berita dari halaman /admin
+  gambar?: string; // alamat lengkap foto banner
+  dibuat?: string; // waktu terbit (ISO)
 };
 
 // Ganti isi berita di sini. Tambah objek baru untuk rilis berikutnya,
