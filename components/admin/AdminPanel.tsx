@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { upload } from "@vercel/blob/client";
 import type { Berita } from "@/app/data";
 
 type Form = {
@@ -16,6 +15,20 @@ type Form = {
 };
 
 const kosong: Form = { judul: "", kategori: "Berita", tanggal: "", ringkasan: "", isi: "", kutipan: "", gambar: "", slugLama: "" };
+/** Perkecil foto di browser (maks. 2000px, JPEG) supaya cepat diunggah dari HP. */
+async function perkecil(file: File): Promise<File> {
+  if (file.size < 1_200_000 || !file.type.startsWith("image/")) return file;
+  const bmp = await createImageBitmap(file).catch(() => null);
+  if (!bmp) return file;
+  const skala = Math.min(1, 2000 / Math.max(bmp.width, bmp.height));
+  const c = document.createElement("canvas");
+  c.width = Math.round(bmp.width * skala);
+  c.height = Math.round(bmp.height * skala);
+  c.getContext("2d")!.drawImage(bmp, 0, 0, c.width, c.height);
+  const blob: Blob | null = await new Promise((r) => c.toBlob(r, "image/jpeg", 0.85));
+  return blob ? new File([blob], file.name.replace(/\.\w+$/, "") + ".jpg", { type: "image/jpeg" }) : file;
+}
+
 const kategoriList = ["Berita", "Pendaftaran", "Deklarasi", "Roadshow", "Kegiatan", "Liputan Media"];
 
 export default function AdminPanel({ awal, blob }: { awal: Berita[]; blob: boolean }) {
@@ -47,9 +60,13 @@ export default function AdminPanel({ awal, blob }: { awal: Berita[]; blob: boole
       let gambar = f.gambar;
       if (file) {
         setStatus("Mengunggah foto…");
-        const ext = file.name.split(".").pop() || "jpg";
-        const res = await upload(`foto/berita.${ext}`, file, { access: "public", handleUploadUrl: "/api/admin/upload" });
-        gambar = res.url;
+        const kecil = await perkecil(file);
+        const fd = new FormData();
+        fd.append("foto", kecil);
+        const up = await fetch("/api/admin/foto", { method: "POST", body: fd });
+        const uj = await up.json().catch(() => ({}));
+        if (!up.ok) throw new Error(uj.error || "Gagal mengunggah foto.");
+        gambar = uj.url;
       }
       setStatus("Menyimpan berita…");
       const r = await fetch("/api/admin/berita", {
@@ -131,7 +148,7 @@ export default function AdminPanel({ awal, blob }: { awal: Berita[]; blob: boole
               // eslint-disable-next-line @next/next/no-img-element
               <img src={preview} alt="Pratinjau foto" />
             ) : (
-              <span>Klik untuk memilih foto (JPG/PNG, maks. 15 MB)</span>
+              <span>Klik untuk memilih foto (JPG/PNG, otomatis diperkecil)</span>
             )}
             <input id="foto-input" type="file" accept="image/jpeg,image/png,image/webp" onChange={pilihFoto} />
           </div>
