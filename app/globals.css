@@ -468,3 +468,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .steps__date { margin-top: 0; }
   .steps__item--munas .steps__no { width: 40px; height: 40px; margin-top: 0; }
 }
+
+/* foto hero desktop digeser ke kiri */
+@media (min-width: 861px) { .hero__visual--img { position: relative; left: -80px; } }
