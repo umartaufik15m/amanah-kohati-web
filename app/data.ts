@@ -132,7 +132,7 @@ export const kaderisasi = [
 ];
 export const organisasi = [
   { grup: "PB HMI & KOHATI PB HMI", daftar: ["Ketua Bidang PU PB HMI", "Wasekjen Bidang PU PB HMI", "Wasekum Bidang PSDO KOHATI PB HMI", "Wabendum Bidang HAL KOHATI PB HMI"] },
-  { grup: "HMI & KOHATI Cabang Bandung", daftar: ["Ketua Umum KOHATI HMI Cabang Bandung", "Kabid Eksternal KOHATI HMI Cabang Bandung", "Ketua Umum HMI Komisariat FPIPS", "Bidang Eksternal KOHATI HMI Komisariat FPIPS"] },
+  { grup: "HMI & KOHATI Cabang Bandung", daftar: ["Ketua Umum KOHATI HMI Cabang Bandung", "Kabid Eksternal KOHATI HMI Cabang Bandung", "Ketua Umum HMI Komisariat FPIPS", "Bendahara Umum HMI Komisariat FPIPS", "Bidang Eksternal KOHATI HMI Komisariat FPIPS"] },
   { grup: "Organisasi Lainnya", daftar: ["Pengurus IKA UPI Pusat", "Duta Wisata Jawa Barat", "Duta Wisata Kabupaten Tasikmalaya", "Pengurus Provinsi Purna Paskibraka Jawa Barat", "Mojang Kabupaten Tasikmalaya"] },
 ];
 
