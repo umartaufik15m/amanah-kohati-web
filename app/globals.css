@@ -127,7 +127,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; min-height: 560px; }
 .hero__logo { height: 72px; width: auto; margin-bottom: 20px; }
 .hero__title { font-family: var(--display); font-weight: 800; font-size: clamp(48px, 7vw, 92px); line-height: .95; letter-spacing: -.03em; margin: 18px 0 10px; }
-.hero__title span { display: block; font-weight: 600; font-size: .5em; letter-spacing: -.01em; margin-top: 10px; }
+.hero__title .hero__sub { display: block; font-weight: 600; font-size: .5em; letter-spacing: -.01em; margin-top: 10px; }
 .hero__title em { font-family: var(--serif); font-style: italic; color: var(--ungu); }
 .hero__tagline { font-family: var(--serif); font-style: italic; font-weight: 700; font-size: clamp(24px, 3vw, 34px); color: var(--ungu); line-height: 1.2; max-width: 560px; }
 .hero__who { margin: 26px 0 30px; display: grid; gap: 2px; padding-left: 16px; border-left: 4px solid var(--soft-blue); }
@@ -229,7 +229,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* kutipan */
 .quote-band { background: var(--soft-pink); padding: 72px 0; text-align: center; }
 .quote-band p { font-family: var(--serif); font-weight: 700; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.15; }
-.quote-band span { display: block; margin-top: 14px; font-weight: 700; letter-spacing: .08em; }
+.quote-band .quote-band__tag { display: block; margin-top: 14px; font-weight: 700; letter-spacing: .08em; }
 
 /* program */
 .program__head { text-align: center; margin-bottom: 40px; }
@@ -374,7 +374,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__copy { padding-bottom: 0; }
 .hero__logo { height: 80px; margin-bottom: 8px; }
 .hero__title { font-size: clamp(42px, 5.4vw, 78px); white-space: nowrap; margin: 4px 0 6px; line-height: 1; }
-.hero__title span { font-size: .48em; margin-top: 8px; }
+.hero__title .hero__sub { font-size: .48em; margin-top: 8px; }
 .hero__tagline { font-size: clamp(22px, 2.4vw, 30px); margin-top: 14px; }
 .hero__who { margin: 22px 0 26px; }
 .hero__visual--img { min-height: 0; height: auto; display: block; }
@@ -398,7 +398,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero__copy { display: flex; flex-direction: column; align-items: center; }
   .hero__logo { height: 52px; margin: 18px auto 10px; }
   .hero__title { font-size: clamp(36px, 11vw, 48px); white-space: nowrap; }
-  .hero__title span { font-size: .5em; }
+  .hero__title .hero__sub { font-size: .5em; }
   .hero__tagline { font-size: 22px; max-width: 320px; margin-inline: auto; }
   .hero__who { border-left: 0; padding-left: 0; margin: 18px auto 22px; max-width: 320px; }
   .hero__who strong { font-size: 16px; }
@@ -475,3 +475,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero__visual--img { order: -1; }
   .hero__visual-img { margin-left: 0; margin-right: auto; }
 }
+
+/* ===== animasi teks kata demi kata ===== */
+.hero__title .hero__sub { display: block; }
+.atext__w { display: inline-block; vertical-align: top; }
+.atext__w > span { display: inline-block; will-change: transform, opacity; }
+.atext--rise .atext__w { overflow: hidden; padding: 0 .08em .12em 0; margin: 0 -.08em -.12em 0; }
+.atext--rise .atext__w > span { transform: translateY(110%) rotate(4deg); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.atext--rise.atext--in .atext__w > span { transform: none; }
+.atext--fade .atext__w > span { opacity: .12; filter: blur(6px); transform: translateY(8px); transition: opacity .7s ease, filter .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.atext--fade.atext--in .atext__w > span { opacity: 1; filter: none; transform: none; }
+.tag .atext__w { overflow: visible; }
+.tag .atext--rise .atext__w > span { transform: translateY(40%) scale(.9); opacity: 0; transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .5s ease; }
+.tag .atext--rise.atext--in .atext__w > span { transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .atext__w > span { transform: none !important; opacity: 1 !important; filter: none !important; transition: none !important; } }

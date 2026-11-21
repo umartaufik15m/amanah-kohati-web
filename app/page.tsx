@@ -8,6 +8,7 @@ import { getSemuaBerita } from "@/lib/news";
 import SafeImg from "@/components/SafeImg";
 import FallbackImg from "@/components/FallbackImg";
 import Photo from "@/components/Photo";
+import AnimText from "@/components/AnimText";
 import {
   hero, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
   organisasiNarasi, kaderisasi, organisasi, manifesto, visi, misi, dimensi, kutipan,
@@ -28,13 +29,12 @@ function Marquee({ text, tone }: { text: string; tone: "green" | "pink" }) {
 
 function Title({ kicker, italic, rest, tone }: { kicker?: string; italic: string; rest?: string; tone: "green" | "blue" | "pink" | "white" }) {
   return (
-    <div className="stitle">
+    <Reveal className="stitle">
       {kicker && <p className={`kicker kicker--${tone}`}>{kicker}</p>}
       <h2 className={`tag tag--${tone}`}>
-        <em>{italic}</em>
-        {rest ? ` ${rest}` : ""}
+        <AnimText parts={rest ? [{ em: italic }, rest] : [{ em: italic }]} delay={150} stagger={90} />
       </h2>
-    </div>
+    </Reveal>
   );
 }
 
@@ -55,17 +55,11 @@ export default async function Page() {
               <Reveal>
                 <SafeImg src="/images/logo-header.png" alt="Logo HMI dan KOHATI" className="hero__logo" />
               </Reveal>
-              <Reveal delay={80}>
-                <h1 className="hero__title">
-                  {hero.judul.replace(/,\s*$/, "")}
-                  <span>
-                    untuk <em>Perempuan</em> Indonesia
-                  </span>
-                </h1>
-              </Reveal>
-              <Reveal delay={160}>
-                <p className="hero__tagline">{hero.tagline}</p>
-              </Reveal>
+              <h1 className="hero__title">
+                <AnimText parts={hero.judul.replace(/,\s*$/, "")} delay={150} stagger={120} />
+                <AnimText parts={["untuk", { em: "Perempuan" }, "Indonesia"]} className="hero__sub" delay={450} stagger={110} />
+              </h1>
+              <AnimText as="p" parts={hero.tagline} className="hero__tagline" mode="fade" delay={850} stagger={70} />
               <Reveal delay={240}>
                 <div className="hero__who">
                   <strong>{hero.ajakan}</strong>
@@ -234,8 +228,7 @@ export default async function Page() {
             <span className="manifesto__mark" aria-hidden>“</span>
             <Reveal>
               <blockquote className="manifesto__quote">
-                <em>{manifesto.sorot}</em>
-                {manifesto.kalimat}
+                <AnimText parts={[{ em: manifesto.sorot }, manifesto.kalimat]} mode="fade" stagger={45} />
               </blockquote>
               <p className="manifesto__by">{manifesto.oleh}</p>
             </Reveal>
@@ -284,8 +277,8 @@ export default async function Page() {
         {/* KUTIPAN — pink */}
         <section className="quote-band">
           <div className="container container--narrow">
-            <p><em>{kutipan.miring}</em>{kutipan.lanjut}</p>
-            <span>{dukungan.tagar}</span>
+            <AnimText as="p" parts={[{ em: kutipan.miring }, kutipan.lanjut]} mode="fade" stagger={60} />
+            <span className="quote-band__tag">{dukungan.tagar}</span>
           </div>
         </section>
 
@@ -327,7 +320,7 @@ export default async function Page() {
             </Reveal>
             <div className="closing__body">
               <p className="tag tag--pink tag--sm"><em>Dukung</em> Dini</p>
-              <Reveal><h2 className="closing__title">{dukungan.judul}</h2></Reveal>
+              <h2 className="closing__title"><AnimText parts={dukungan.judul} stagger={60} /></h2>
               <Reveal><p className="closing__text">{dukungan.isi}</p></Reveal>
               <Reveal><p className="closing__tag">{dukungan.tagar}</p></Reveal>
               <div className="closing__who">
