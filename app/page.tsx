@@ -9,6 +9,7 @@ import SafeImg from "@/components/SafeImg";
 import FallbackImg from "@/components/FallbackImg";
 import Photo from "@/components/Photo";
 import AnimText from "@/components/AnimText";
+import MisiStepper from "@/components/MisiStepper";
 import {
   hero, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
   organisasiNarasi, kaderisasi, organisasi, manifesto, visi, misi, dimensi, kutipan,
@@ -208,11 +209,16 @@ export default async function Page() {
             </Reveal>
             <div className="three">
               {organisasi.map((o, i) => (
-                <Reveal key={o.grup} delay={i * 90} className="card">
-                  <h4 className="card__title card__title--green">{o.grup}</h4>
-                  <ul className="bullets bullets--green">
-                    {o.daftar.map((d) => <li key={d}>{d}</li>)}
-                  </ul>
+                <Reveal key={o.grup} delay={i * 90}>
+                  <details className="card acc" open={i === 0}>
+                    <summary>
+                      <h4 className="card__title card__title--green">{o.grup}</h4>
+                      <i className="acc__icon" aria-hidden />
+                    </summary>
+                    <ul className="bullets bullets--green">
+                      {o.daftar.map((d) => <li key={d}>{d}</li>)}
+                    </ul>
+                  </details>
                 </Reveal>
               ))}
             </div>
@@ -254,20 +260,17 @@ export default async function Page() {
               <p className="visi__label">Visi</p>
               <p>{visi}</p>
             </Reveal>
-            <div className="three">
-              {misi.map((m, i) => (
-                <Reveal key={m.no} delay={i * 90} className={`misi misi--${i + 1}`}>
-                  <span className="num">{m.no}</span>
-                  <h3>{m.judul}</h3>
-                  <p>{m.isi}</p>
-                </Reveal>
-              ))}
-            </div>
+            <Reveal>
+              <MisiStepper misi={misi} />
+            </Reveal>
             <Reveal className="dimensi">
               <h3>Dimensi Amanah Kepemimpinan</h3>
               <div className="dimensi__grid">
                 {dimensi.map((d) => (
-                  <div key={d.judul}><b>{d.judul}</b><p>{d.isi}</p></div>
+                  <details key={d.judul} className="acc acc--dim">
+                    <summary><b>{d.judul}</b><i className="acc__icon" aria-hidden /></summary>
+                    <p>{d.isi}</p>
+                  </details>
                 ))}
               </div>
             </Reveal>
@@ -290,6 +293,7 @@ export default async function Page() {
               <p className="kicker kicker--pill kicker--pill-green">Rencana Program</p>
               <h2 className="program__title">8 Program Amanah KOHATI</h2>
               <p className="narasi center">Gagasan yang diterjemahkan menjadi kerja nyata untuk kader dan perempuan Indonesia.</p>
+              <p className="acc-hint">Klik setiap program untuk membaca penjelasannya.</p>
               <ul className="legend">
                 <li className="m1">Amanah Kaderisasi</li>
                 <li className="m2">Amanah Kepemimpinan</li>
@@ -298,12 +302,15 @@ export default async function Page() {
             </div>
             <div className="programs">
               {program.map((p, i) => (
-                <Reveal key={p.no} delay={(i % 4) * 70} className={`prog prog--m${p.misi}`}>
-                  <div className="prog__top">
-                    <span className="num">{p.no}</span>
-                    <div><small>KOHATI</small><h3>{p.nama}</h3></div>
-                  </div>
-                  <p>{p.isi}</p>
+                <Reveal key={p.no} delay={(i % 4) * 70}>
+                  <details className={`prog prog--m${p.misi} acc`}>
+                    <summary className="prog__top">
+                      <span className="num">{p.no}</span>
+                      <div><small>KOHATI</small><h3>{p.nama}</h3></div>
+                      <i className="acc__icon" aria-hidden />
+                    </summary>
+                    <p>{p.isi}</p>
+                  </details>
                 </Reveal>
               ))}
             </div>
