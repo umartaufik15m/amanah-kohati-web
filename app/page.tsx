@@ -11,7 +11,7 @@ import Photo from "@/components/Photo";
 import {
   hero, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
   organisasiNarasi, kaderisasi, organisasi, manifesto, visi, misi, dimensi, kutipan,
-  program, jumlahGaleri, dukungan, tahapan,
+  program, dukungan, tahapan,
 } from "./data";
 
 function Marquee({ text, tone }: { text: string; tone: "green" | "pink" }) {
@@ -317,25 +317,6 @@ export default async function Page() {
           </div>
         </section>
 
-        {/* GALERI — biru */}
-        <section id="galeri" className="section sec--blue-soft-rev">
-          <Decor kind="kelopak" size={230} right="-60px" top="40px" reverse />
-          <div className="container">
-            <Title kicker="Koleksi Foto" italic="Galeri" rest="Perjalanan" tone="blue" />
-            <p className="narasi">Potret kegiatan, liputan, dan momen pengabdian dari waktu ke waktu.</p>
-            <div className="masonry">
-              {Array.from({ length: jumlahGaleri }, (_, i) => {
-                const n = String(i + 1).padStart(2, "0");
-                return (
-                  <Reveal key={n} delay={(i % 4) * 60} className="masonry__item">
-                    <Photo src={`/images/galeri-${n}.jpg`} alt={`Galeri perjalanan ${n}`} label={`galeri-${n}.jpg`} />
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* DUKUNG DINI — pink */}
         <section id="dukung" className="section sec--pink-soft closing">
           <Decor kind="kotak" size={270} right="-80px" bottom="40px" />
@@ -354,9 +335,7 @@ export default async function Page() {
                 <span>{profil.peran} · {profil.periode}</span>
               </div>
               <div className="closing__cta">
-                <a href={profil.kontak.whatsapp} target="_blank" rel="noreferrer" className="btn btn--pink">Saya Dukung Dini</a>
-                <a href={`mailto:${profil.kontak.email}`} className="btn btn--ghost-pink">Hubungi Tim Dini</a>
-                <a href={`https://instagram.com/${profil.kontak.instagram}`} target="_blank" rel="noreferrer" className="btn btn--ghost-pink">Ikuti @{profil.kontak.instagram}</a>
+                <a href={`https://instagram.com/${profil.kontak.instagram}`} target="_blank" rel="noreferrer" className="btn btn--pink">Ikuti @{profil.kontak.instagram}</a>
               </div>
             </div>
           </div>
