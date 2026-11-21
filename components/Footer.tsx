@@ -14,9 +14,14 @@ export default function Footer() {
         <span>
           Amanah <b>KOHATI</b> · untuk Perempuan Indonesia
         </span>
-        <a href={`https://instagram.com/${profil.kontak.instagram}`} target="_blank" rel="noreferrer">
-          @{profil.kontak.instagram}
-        </a>
+        <span className="footer__ig">
+          <a href={`https://instagram.com/${profil.kontak.instagram}`} target="_blank" rel="noreferrer">
+            @{profil.kontak.instagram}
+          </a>
+          <a href={`https://instagram.com/${profil.kontak.instagramPribadi}`} target="_blank" rel="noreferrer">
+            @{profil.kontak.instagramPribadi}
+          </a>
+        </span>
       </div>
     </footer>
   );

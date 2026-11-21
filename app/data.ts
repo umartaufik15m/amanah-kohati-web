@@ -21,6 +21,7 @@ export const profil = {
     whatsapp: "https://wa.me/6282216565693?text=" + encodeURIComponent("Halo, saya mendukung Dini Asmiatul Amanah untuk Amanah KOHATI."),
     email: "Diniasmiatul13@gmail.com",
     instagram: "amanahkohati",
+    instagramPribadi: "diniasmiatul02",
   },
 };
 

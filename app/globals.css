@@ -527,3 +527,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .misi-steps__btn b { font-family: var(--display); }
 @media (max-width: 600px) { .misi--row { grid-template-columns: 1fr; gap: 10px; } }
 @media (prefers-reduced-motion: reduce) { .misi--pop, .acc[open] > :not(summary) { animation: none; } }
+
+.profile__ig { display: inline-block; margin-top: 8px; font-weight: 700; font-size: 15px; color: var(--ungu); text-decoration: none; border-bottom: 2px solid var(--soft-pink); }
+.profile__ig:hover { border-bottom-color: var(--ungu); }
+.footer__ig { display: inline-flex; gap: 18px; flex-wrap: wrap; justify-content: center; }

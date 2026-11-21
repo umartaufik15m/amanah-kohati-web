@@ -135,6 +135,7 @@ export default async function Page() {
               <Reveal>
                 <h3 className="profile__name">{profil.nama}</h3>
                 <p className="profile__place">{profil.asal}</p>
+                <a className="profile__ig" href={`https://instagram.com/${profil.kontak.instagramPribadi}`} target="_blank" rel="noreferrer">Instagram @{profil.kontak.instagramPribadi}</a>
                 <ul className="chips">
                   {profil.fokus.map((f) => <li key={f}>{f}</li>)}
                 </ul>
@@ -336,6 +337,7 @@ export default async function Page() {
               </div>
               <div className="closing__cta">
                 <a href={`https://instagram.com/${profil.kontak.instagram}`} target="_blank" rel="noreferrer" className="btn btn--pink">Ikuti @{profil.kontak.instagram}</a>
+                <a href={`https://instagram.com/${profil.kontak.instagramPribadi}`} target="_blank" rel="noreferrer" className="btn btn--ghost-pink">Ikuti @{profil.kontak.instagramPribadi}</a>
               </div>
             </div>
           </div>
