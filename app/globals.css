@@ -469,5 +469,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .steps__item--munas .steps__no { width: 40px; height: 40px; margin-top: 0; }
 }
 
-/* foto hero desktop digeser ke kiri */
-@media (min-width: 861px) { .hero__visual--img { position: relative; left: -80px; } }
+/* desktop: foto di kiri, tulisan di kanan */
+@media (min-width: 861px) {
+  .hero__grid { grid-template-columns: .8fr 1.2fr; }
+  .hero__visual--img { order: -1; }
+  .hero__visual-img { margin-left: 0; margin-right: auto; }
+}
