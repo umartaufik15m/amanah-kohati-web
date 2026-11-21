@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import type { Berita } from "@/app/data";
+import type { Aspirasi } from "@/lib/aspirasi";
+import AdminAspirasi from "./AdminAspirasi";
 
 type Form = {
   judul: string;
@@ -31,7 +33,7 @@ async function perkecil(file: File): Promise<File> {
 
 const kategoriList = ["Berita", "Pendaftaran", "Deklarasi", "Roadshow", "Kegiatan", "Liputan Media"];
 
-export default function AdminPanel({ awal, blob }: { awal: Berita[]; blob: boolean }) {
+export default function AdminPanel({ awal, blob, aspirasi }: { awal: Berita[]; blob: boolean; aspirasi: Aspirasi[] }) {
   const [list, setList] = useState<Berita[]>(awal);
   const [f, setF] = useState<Form>(kosong);
   const [file, setFile] = useState<File | null>(null);
@@ -222,6 +224,8 @@ export default function AdminPanel({ awal, blob }: { awal: Berita[]; blob: boole
         </ul>
         <p className="admin__muted">Berita bawaan (yang ditulis di kode) tidak muncul di daftar ini.</p>
       </section>
+
+      <AdminAspirasi awal={aspirasi} />
     </main>
   );
 }

@@ -9,6 +9,7 @@ const links = [
   { href: "/#rekam-jejak", label: "Rekam Jejak" },
   { href: "/#gagasan", label: "Gagasan" },
   { href: "/#program", label: "Program" },
+  { href: "/#aspirasi", label: "Aspirasi" },
   { href: "/#dukung", label: "Dukung" },
 ];
 

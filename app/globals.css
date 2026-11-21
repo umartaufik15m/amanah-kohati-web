@@ -531,3 +531,33 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .profile__ig { display: inline-block; margin-top: 8px; font-weight: 700; font-size: 15px; color: var(--ungu); text-decoration: none; border-bottom: 2px solid var(--soft-pink); }
 .profile__ig:hover { border-bottom-color: var(--ungu); }
 .footer__ig { display: inline-flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+
+/* ===== aspirasi ===== */
+.aspirasi { display: grid; grid-template-columns: .85fr 1.15fr; gap: 40px; align-items: start; }
+.aspirasi__card { padding: 32px; }
+.aspirasi__form { display: grid; gap: 16px; }
+.aspirasi__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.aspirasi__form label { display: grid; gap: 6px; font-weight: 700; font-size: 14px; color: var(--green-deep); }
+.aspirasi__form input, .aspirasi__form textarea { font: inherit; font-weight: 400; font-size: 16px; color: var(--ink); padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; width: 100%; transition: border-color .2s, box-shadow .2s; }
+.aspirasi__form input:focus, .aspirasi__form textarea:focus { outline: none; border-color: var(--ungu); box-shadow: 0 0 0 4px rgba(194,87,125,.12); }
+.aspirasi__form textarea { resize: vertical; line-height: 1.6; }
+.aspirasi__form small { justify-self: end; font-weight: 500; color: var(--mute); font-size: 12px; }
+.aspirasi__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.aspirasi__submit { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.aspirasi__submit .btn:disabled { opacity: .6; cursor: wait; }
+.aspirasi__err { color: #b3261e; font-weight: 600; font-size: 14px; }
+.aspirasi__ok { display: grid; gap: 12px; justify-items: start; animation: accIn .5s cubic-bezier(.2,.8,.2,1); }
+.aspirasi__ok b { font-family: var(--display); font-size: 22px; color: var(--green-deep); }
+.aspirasi__ok p { color: var(--mute); }
+@media (max-width: 860px) { .aspirasi { grid-template-columns: 1fr; gap: 20px; } .aspirasi__row { grid-template-columns: 1fr; } .aspirasi__card { padding: 22px; } }
+
+.admin__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.admin__head h2 { margin: 0; }
+.admin__search { margin-bottom: 14px; }
+.asp-list { display: grid; gap: 12px; }
+.asp-list li { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 8px; }
+.asp-list__meta { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.asp-list__meta span { color: var(--green-deep); font-weight: 600; font-size: 14px; }
+.asp-list__meta small { color: var(--mute); font-size: 13px; margin-left: auto; }
+.asp-list p { white-space: pre-wrap; line-height: 1.6; }
+.asp-list .admin__item-actions { justify-content: flex-end; }

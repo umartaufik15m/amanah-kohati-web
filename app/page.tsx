@@ -10,6 +10,7 @@ import FallbackImg from "@/components/FallbackImg";
 import Photo from "@/components/Photo";
 import AnimText from "@/components/AnimText";
 import MisiStepper from "@/components/MisiStepper";
+import AspirasiForm from "@/components/AspirasiForm";
 import {
   hero, profil, profilSection, pendidikan, publikasi, prestasiNarasi, prestasi,
   organisasiNarasi, kaderisasi, organisasi, manifesto, visi, misi, dimensi, kutipan,
@@ -315,6 +316,20 @@ export default async function Page() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ASPIRASI — hijau lembut */}
+        <section id="aspirasi" className="section sec--green-soft">
+          <Decor kind="kelopak" size={220} right="-70px" top="50px" reverse />
+          <div className="container aspirasi">
+            <div className="aspirasi__intro">
+              <Title kicker="Suara Kader" italic="Kirim" rest="Aspirasi" tone="green" />
+              <p className="narasi">Gagasan terbaik lahir dari mendengar. Sampaikan harapan, masukan, dan gagasanmu untuk KOHATI. Setiap aspirasi akan kami baca dengan sepenuh hati.</p>
+            </div>
+            <Reveal className="card aspirasi__card">
+              <AspirasiForm />
+            </Reveal>
           </div>
         </section>
 
