@@ -448,3 +448,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .admin__list img, .admin__thumb { width: 56px; height: 44px; }
   .admin__item-actions { grid-column: 1 / -1; }
 }
+
+/* ---------- tahapan menuju munas ---------- */
+.steps { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; position: relative; }
+.steps::before { content: ""; position: absolute; top: 19px; left: 7%; right: 7%; height: 2px; background: #ead7df; }
+.steps__item { position: relative; display: grid; justify-items: center; align-content: start; text-align: center; gap: 6px; }
+.steps__no { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 800; color: var(--white); background: var(--ungu); border: 4px solid #fff; box-shadow: var(--shadow); }
+.steps__date { font-family: var(--display); font-size: 13px; line-height: 1.25; color: var(--ungu); margin-top: 6px; }
+.steps__item h3 { margin: 0; font-size: 15px; line-height: 1.25; color: var(--ink); }
+.steps__item p { margin: 0; font-size: 13px; line-height: 1.45; color: var(--mute); }
+.steps__item--seleksi .steps__no { background: var(--soft-blue); } .steps__item--seleksi .steps__date { color: var(--blue-deep); }
+.steps__item--debat .steps__no { background: var(--green-mid); } .steps__item--debat .steps__date { color: var(--green-mid); }
+.steps__item--munas .steps__no { background: var(--green-deep); width: 46px; height: 46px; margin-top: -3px; } .steps__item--munas .steps__date { color: var(--green-deep); }
+@media (max-width: 960px) {
+  .steps { grid-template-columns: 1fr; gap: 0; }
+  .steps::before { top: 20px; bottom: 60px; left: 19px; right: auto; width: 2px; height: auto; }
+  .steps__item { grid-template-columns: 40px 1fr; justify-items: start; text-align: left; column-gap: 16px; row-gap: 2px; padding-bottom: 22px; }
+  .steps__no { grid-row: 1 / span 3; }
+  .steps__date { margin-top: 0; }
+  .steps__item--munas .steps__no { width: 40px; height: 40px; margin-top: 0; }
+}

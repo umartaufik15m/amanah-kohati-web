@@ -189,3 +189,14 @@ export const dukungan = {
   isi: "Dini hadir membawa rekam jejak dari ruang kaderisasi hingga pengabdian di tingkat nasional, serta gagasan yang siap dijalankan. Dukungan Kanda, Yunda, dan seluruh kader di Musyawarah Nasional KOHATI ke-XXVI adalah langkah pertama untuk menjadikan gagasan itu kerja nyata.",
   tagar: "#AmanahKOHATI",
 };
+
+// Jadwal resmi tahapan pemilihan Ketua Umum KOHATI PB HMI 2027–2029
+export const tahapan = [
+  { tanggal: "14–16 November 2026", judul: "Pengambilan Formulir Pendaftaran", ket: "Oleh seluruh bakal calon", fase: "daftar" },
+  { tanggal: "17–19 November 2026", judul: "Pengembalian Formulir Pendaftaran", ket: "Oleh seluruh bakal calon", fase: "daftar" },
+  { tanggal: "20 November 2026", judul: "Verifikasi Berkas", ket: "Berkas seluruh bakal calon", fase: "seleksi" },
+  { tanggal: "21 November 2026", judul: "Fit and Proper Test", ket: "Uji kelayakan bakal calon", fase: "seleksi" },
+  { tanggal: "22 November 2026", judul: "Penetapan Calon", ket: "Seluruh bakal calon ditetapkan menjadi calon", fase: "seleksi" },
+  { tanggal: "23 November 2026", judul: "Nomor Urut & Debat Kandidat", ket: "Pengambilan nomor urut dan debat kandidat Ketua Umum", fase: "debat" },
+  { tanggal: "28 November – 5 Desember 2026", judul: "Munas KOHATI ke-XXVI", ket: "Pelaksanaan Musyawarah Nasional di Bandar Lampung", fase: "munas" },
+];

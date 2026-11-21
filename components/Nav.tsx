@@ -7,7 +7,10 @@ const links = [
   { href: "/#berita", label: "Berita" },
   { href: "/#profil", label: "Profil" },
   { href: "/#rekam-jejak", label: "Rekam Jejak" },
-  { href: "/#kaderisasi", label: "Kaderisasi" },
+  { href: "/#gagasan", label: "Gagasan" },
+  { href: "/#program", label: "Program" },
+  { href: "/#galeri", label: "Galeri" },
+  { href: "/#dukung", label: "Dukung" },
 ];
 
 export default function Nav() {
