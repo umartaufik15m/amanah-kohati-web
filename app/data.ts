@@ -43,6 +43,8 @@ export type Berita = {
   tanggal: string; // isi dengan tanggal rilis, contoh "12 Desember 2026"
   isi: string[];
   kutipan?: string;
+  // Untuk tulisan opini: nama penulis (menggantikan "Tim Media Amanah KOHATI")
+  penulis?: string;
   // Untuk liputan media dari situs lain: isi `url` dan `sumber`.
   // Kartu akan langsung membuka artikel aslinya (tanpa halaman detail).
   url?: string;
@@ -82,6 +84,42 @@ export const berita: Berita[] = [
     sumberLiputan: {
       nama: "Berita Opini",
       url: "https://beritaopini.id/2026/11/17/putri-daerah-jawa-barat-dini-asmiatul-amanah-maju-sebagai-calon-ketua-umum-kohati-pb-hmi-periode-2027-2029/",
+    },
+  },
+  {
+    slug: "perempuan-kepemimpinan-dan-amanah-peradaban",
+    kategori: "Opini",
+    bannerJudul: "Opini",
+    bannerSub: "Refleksi 60 Tahun KOHATI",
+    judul: "Perempuan, Kepemimpinan dan Amanah Peradaban",
+    ringkasan:
+      "Refleksi 60 tahun KOHATI: kepemimpinan perempuan bukan soal siapa, melainkan nilai yang dibawa, kebijakan yang dihadirkan, dan perubahan yang diwariskan.",
+    tanggal: "18 September 2026",
+    penulis: "Dini Asmiatul Amanah",
+    banner: "berita-opini-amanah-peradaban.jpg",
+    isi: [
+      "Enam puluh tahun KOHATI bukan sekadar legitimasi eksistensi dari berdirinya hingga kini, namun momentum untuk merefleksikan kembali tentang \u201cPerempuan seperti apa yang hendak KOHATI tumbuhkan, dan nilai-nilai kepemimpinan apa yang ingin terus dihidupkan?\u201d",
+      "Pertanyaan tersebut menjadi sangat relevan di dunia yang saat ini bergerak sangat cepat dan dinamis. Perkembangan teknologi, kecerdasan artifisial, perubahan sosial, ketimpangan, krisis lingkungan, resiliensi keluarga, hingga kompleksitas permasalahan kemanusiaan menghadirkan tantangan baru bagi peran perempuan dalam kepemimpinan strategis. Sehingga, dalam menjawab tantangan ini, tidak cukup bagi KOHATI untuk sekadar berbicara hanya menyoal kuantitas perempuan dalam ruang-ruang kepemimpinan.",
+      "Hal yang lebih penting adalah memastikan bahwa kehadiran perempuan dalam ruang-ruang kepemimpinan memiliki kualitas memimpin dengan nilai dan amanah dalam nilai-nilai yang diperjuangkannya untuk kemaslahatan umat. Pemimpin perempuan harus mampu memikul amanah, mengambil keputusan, menyelesaikan persoalan, dan menjadi cahaya bagi peradaban.",
+      "## Kepemimpinan dalam Islam: Amanah untuk Peradaban",
+      "Dalam Islam, kepemimpinan bukan semata-mata tentang posisi, kekuasaan, dan pengakuan sosial. Islam memandang kepemimpinan sebagai amanah dan pertanggungjawaban. Sebagai contoh, Nabi Muhammad SAW telah mewariskan kepemimpinan yang amanah, sehingga berhasil menerangi zaman dengan cahaya pengetahuan, kemajuan, dan kemuliaan.",
+      "Jejak kepemimpinannya tak terbantahkan oleh dunia di sepanjang zaman. Siapa pun yang menginsafi rekam jejak kepemimpinannya akan mengakui bahwa ia adalah teladan kepemimpinan yang relevan di setiap zaman.",
+      "Ada suatu hadis yang patut menjadi renungan bagi kita semua sebagai khalifah fil ardh, yang artinya: \u201cKetahuilah setiap kalian adalah pemimpin, dan setiap kalian akan dimintai pertanggungjawabannya atas yang dipimpin. Penguasa yang memimpin rakyat banyak dia akan dimintai pertanggungjawaban atas yang dipimpinnya, setiap kepala keluarga adalah pemimpin anggota keluarganya dan dia dimintai pertanggungjawaban atas yang dipimpinnya, dan istri pemimpin terhadap keluarga rumah suaminya dan juga anak-anaknya, dan dia akan dimintai pertanggungjawabannya terhadap mereka, dan budak seseorang juga pemimpin terhadap harta tuannya dan akan dimintai pertanggungjawaban terhadapnya. Ketahuilah, setiap kalian adalah bertanggung jawab atas yang dipimpinnya.\u201d (HR al-Bukhari)",
+      "Pesan tersebut mengingatkan bahwa setiap manusia adalah pemimpin dan setiap pemimpin akan dimintai pertanggungjawaban atas apa yang dipimpinnya. Dalam hal ini tidak ada diskursus yang memosisikan laki-laki atau perempuan sebagai pemimpin, tetapi siapa pun yang diamanahkan menjadi pemimpin harus memiliki integritas moral dalam kepemimpinannya.",
+      "Dalam konteks ini, kiranya kita perlu keluar dari perdebatan yang terlalu sederhana: perempuan versus laki-laki, boleh versus tidak boleh, mampu versus tidak mampu. Perdebatan semacam itu sering kali membuat kita lupa pada substansi kepemimpinan itu sendiri. Kepemimpinan bukan menyoal tentang siapa, tetapi apa nilai yang ia bawa, kebijakan apa yang mampu ia hadirkan, dan perubahan apa yang akan ia wariskan.",
+      "## KOHATI dan Tantangan Melahirkan Kepemimpinan Strategis",
+      "Sejak berdirinya, KOHATI memiliki napas sebagai pembina dan pendidik tunas muda. Menjadi keniscayaan bagi KOHATI untuk kembali pada tujuannya menghadirkan kepemimpinan strategis yang mampu menjadi lentera bagi peradaban. Kepemimpinan harus dibangun melalui proses panjang: pendidikan, pengalaman, keteguhan nilai, keberanian mengambil risiko, kemampuan membaca zaman, dan kesediaan bertanggung jawab atas keputusan.",
+      "Proses tersebut sekaligus menegaskan pentingnya memperbaiki proses pengkaderan hingga ke akarnya, mulai dari tingkatan pengurus besar hingga komisariat.",
+      "Dalam konteks ini, KOHATI perlu melakukan transformasi kaderisasi untuk membangun kepemimpinan perempuan yang berintegritas dan mampu menghadirkan perubahan. Kaderisasi yang berorientasi pada leadership capacity dengan berlandaskan nilai-nilai kepemimpinan Islam, seperti siddiq, amanah, tabligh, dan fathanah, dapat menjadi fondasi dalam membentuk karakter dan cara mengambil keputusan.",
+      "Pada saat yang sama, KOHATI perlu membangun sistem mentoring lintas generasi dengan melibatkan alumni yang telah berkiprah di berbagai sektor, sekaligus menyiapkan leadership pipeline agar kader mampu mengambil peran strategis di ruang pendidikan, politik, pemerintahan, dunia usaha, masyarakat sipil, teknologi, maupun ruang publik lainnya. Karena, kepemimpinan yang berkualitas tidak dapat lahir dari proses yang instan, melainkan dari proses belajar sepanjang hayat, jalan pengabdian, dan mengisi ruang-ruang yang memberi kemaslahatan untuk umat.",
+      "Pada akhirnya, refleksi 60 tahun KOHATI bukan hanya tentang mengenang masa lalu, melainkan tentang mempersiapkan masa depan. Gagasan strategis dan futuristik dari setiap pemimpin yang mampu memimpin dengan nilai, amanah dalam setiap tanggung jawab, dan merawat kaderisasi hingga ke akar adalah prasyarat melahirkan kader-kader KOHATI yang mampu menjadi lentera peradaban. Enam puluh tahun KOHATI adalah momentum yang tepat untuk terus menjaga nyala asa dan berjuang bersama menghadirkan KOHATI sebagai lentera yang bersinar dan menyinari, dijiwai nilai-nilai keislaman, keintelektualan, keperempuanan, dan keindonesiaan.",
+      "Layaknya teladan yang ditunjukkan oleh Ummahatul Mukminin, seperti Siti Khadijah r.a., Siti Aisyah r.a., dan Fatimah Azzahra, dengan sifat shiddiq (jujur), thahirah (suci), amanah (dapat dipercaya), taat beragama, dermawan, cerdas, dan penyayang. Mereka adalah muslimah-muslimah hebat yang kiprahnya mampu menjadi cahaya bagi kemajuan peradaban. Peranannya sekaligus menegaskan bahwa setiap kemajuan peradaban tidak dapat dipisahkan dari kehadiran perempuan yang bernilai.",
+    ],
+    kutipan:
+      "Kepemimpinan bukan menyoal tentang siapa, tetapi apa nilai yang ia bawa, kebijakan apa yang mampu ia hadirkan, dan perubahan apa yang akan ia wariskan.",
+    sumberLiputan: {
+      nama: "RMOL.id (Publika)",
+      url: "https://rmol.id/publika/read/2026/09/18/722124/perempuan-kepemimpinan-dan-amanah-peradaban",
     },
   },
 ];

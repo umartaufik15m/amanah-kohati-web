@@ -42,20 +42,20 @@ export default async function BeritaPage({ params }: Props) {
           <Link href="/#berita" className="link link--green">← Kembali ke Beranda</Link>
           <div className="news__meta article__meta">
             <span className="chip chip--green">{b.kategori}</span>
-            <span>{b.tanggal} · Tim Media Amanah KOHATI</span>
+            <span>{b.tanggal} · {b.penulis ? `Oleh ${b.penulis}` : "Tim Media Amanah KOHATI"}</span>
           </div>
           <h1 className="article__title">{b.judul}</h1>
           <div className="article__banner">
             <Photo src={bannerSrc(b)} alt={`Banner ${b.kategori}`} label="Foto berita" />
           </div>
           <div className="article__body">
-            {b.isi.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+            {b.isi.map((p, i) =>
+              p.startsWith("## ") ? <h2 key={i}>{p.slice(3)}</h2> : <p key={i}>{p}</p>
+            )}
             {b.kutipan && <blockquote>“{b.kutipan}”</blockquote>}
             {b.sumberLiputan && (
               <p className="article__source">
-                Berita ini juga diliput oleh{" "}
+                {b.penulis ? "Tulisan ini pertama kali terbit di" : "Berita ini juga diliput oleh"}{" "}
                 <a href={b.sumberLiputan.url} target="_blank" rel="noreferrer">{b.sumberLiputan.nama} ↗</a>
               </p>
             )}
