@@ -62,6 +62,29 @@ export type Berita = {
 // lalu taruh banner-nya di public/images/berita-<slug>.jpg
 export const berita: Berita[] = [
   {
+    slug: "sc-munas-tetapkan-dini-calon-ketua-umum-kohati",
+    kategori: "Penetapan",
+    bannerJudul: "Penetapan",
+    bannerSub: "Calon Ketua Umum KOHATI PB HMI",
+    judul: "SC Munas KOHATI ke-XXVI Resmi Tetapkan Dini Asmiatul Amanah sebagai Calon Ketua Umum KOHATI PB HMI",
+    ringkasan:
+      "Lolos verifikasi administrasi, rekam kaderisasi, dan dukungan cabang, Dini resmi berstatus Calon Ketua Umum KOHATI PB HMI periode 2027–2029.",
+    tanggal: "22 November 2026",
+    banner: "berita-penetapan-calon.jpg",
+    isi: [
+      "Steering Committee (SC) Musyawarah Nasional KOHATI ke-XXVI resmi menetapkan Dini Asmiatul Amanah, M.Pd sebagai Calon Ketua Umum KOHATI PB HMI periode 2027–2029. Penetapan tersebut tertuang dalam Surat Keputusan SC Munas KOHATI PB HMI XXVI tentang Nama-Nama Calon Ketua Umum KOHATI PB HMI pada Munas XXVI, tertanggal 22 November 2026.",
+      "Penetapan ini merupakan bagian dari rangkaian tahapan resmi pemilihan. Pendaftaran bakal calon dibuka pada 14–16 November 2026, kemudian SC melakukan verifikasi berkas dalam tiga aspek: kelengkapan administrasi, rekam jejak kaderisasi yang mencakup jenjang training formal dan pengalaman kepemimpinan di KOHATI, serta dukungan cabang sesuai ketentuan Munas.",
+      "Dari hasil verifikasi tersebut, Dini dinyatakan memenuhi seluruh persyaratan. Statusnya pun resmi berubah dari bakal calon menjadi calon Ketua Umum.",
+      "Selanjutnya, para calon akan mengikuti Musyawarah Nasional KOHATI ke-XXVI di Bandar Lampung pada 28 November hingga 5 Desember 2026. Dalam forum tersebut, utusan KOHATI cabang dan badko dari seluruh Indonesia akan memilih Ketua Umum KOHATI PB HMI yang baru.",
+      "Berasal dari Tasikmalaya, Jawa Barat, Dini maju dengan tagline \u201cAmanah KOHATI, untuk Perempuan Indonesia\u201d. Visinya adalah membangun KOHATI yang kuat dalam kaderisasi, tangguh dalam kelembagaan, serta menjadi ruang gerakan kepemimpinan Muslimah yang berkualitas Insan Cita, yang dijalankan melalui tiga misi: Amanah Kaderisasi, Amanah Kepemimpinan, dan Amanah Kelembagaan.",
+      "Menurut Dini, kata amanah yang ia usung mencerminkan kepercayaan para kader yang harus dijaga. Ukurannya, kata dia, adalah sejauh mana KOHATI mampu hadir dan memberi manfaat bagi perempuan Indonesia.",
+    ],
+    sumberLiputan: {
+      nama: "Berita Opini",
+      url: "https://beritaopini.id/2026/11/22/sc-munas-kohati-ke-xxvi-resmi-tetapkan-dini-asmiatul-amanah-sebagai-calon-ketua-umum-kohati-pb-hmi/",
+    },
+  },
+  {
     slug: "dini-ambil-formulir-calon-ketum-kohati",
     kategori: "Pendaftaran",
     bannerJudul: "Pendaftaran",
