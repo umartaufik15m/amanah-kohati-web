@@ -179,7 +179,6 @@ export const publikasi = [
 export const prestasiNarasi = "Tidak ada tangga yang dilewati; setiap amanah datang setelah amanah sebelumnya ditunaikan.";
 export const prestasi = [
   { judul: "Duta Wisata hingga Tingkat Nasional", isi: "Semasa kuliah, Dini meraih Juara 2 Mojang Jajaka Kabupaten Tasikmalaya dan Juara 2 Putera Puteri Wisata Jawa Barat, lalu mewakili Jawa Barat di Putera Puteri Wisata Indonesia dan meraih Runner-up 1 Kategori Digital." },
-  { judul: "Ajudan Milenial Gubernur Jawa Barat", isi: "Terpilih sebagai satu dari 22 ajudan milenial dari 11.171 pendaftar, melalui wawancara, psikotes, tes fisik, dan bootcamp." },
   { judul: "Pelatih Paskibraka Jawa Barat", isi: "Berawal sebagai anggota Paskibraka Kabupaten Tasikmalaya pada 2013, lalu dipercaya menjadi pelatih Paskibraka Provinsi Jawa Barat pada 2020 dan 2021." },
   { judul: "Reporter JMPS UPI", isi: "Sejak 2017 aktif sebagai reporter JMPS UPI, meliput langsung berbagai acara termasuk konferensi internasional dan pertunjukan seni." },
 ];
