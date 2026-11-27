@@ -242,7 +242,7 @@ export const program = [
 ];
 
 // Jumlah foto galeri: galeri-01.jpg … galeri-12.jpg di public/images
-export const jumlahGaleri = 12;
+export const jumlahGaleri = 11;
 
 export const dukungan = {
   label: "Dukung Dini",
